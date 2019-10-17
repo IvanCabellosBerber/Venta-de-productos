@@ -32,7 +32,7 @@ def modify_product():
                 quantity = str(input("New stock: "))
                 new_appliance = Appliance(name, type, manufacturer, unity_price, quantity, date.today())
                 new_appliance.register_product()
-                # holas
+                #cacaaaaaaaaa
 
 def modify_stock():
     return None
