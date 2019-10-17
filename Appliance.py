@@ -15,6 +15,6 @@ class Appliance:
             "," + str(self.manufacturer) +
             "," + str(self.unityPrice) +
             "," + str(self.quantity) +
-            "," + str(self.lastDayRegistry)
+            "," + str(self.lastDayRegistry + "\n")
         )
         file.close()
