@@ -61,7 +61,7 @@ def show_products():
     with open("stock.dat") as pds:
         line = pds.readline()
         while line:
-            print(line)
+            print(line)#rrrrrrrrrrrr
             line = pds.readline()
 
 
