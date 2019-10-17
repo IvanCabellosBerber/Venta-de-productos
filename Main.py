@@ -32,7 +32,6 @@ def modify_product():
                 quantity = str(input("New stock: "))
                 new_appliance = Appliance(name, type, manufacturer, unity_price, quantity, date.today())
                 new_appliance.register_product()
-                #cacaaaaaaaaa
 
 def modify_stock():
     return None
@@ -61,7 +60,8 @@ def show_products():
     with open("stock.dat") as pds:
         line = pds.readline()
         while line:
-            print(line)#rrrrrrrrrrrr
+            if not line.__contains__("[App"):
+                print(line)
             line = pds.readline()
 
 
