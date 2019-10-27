@@ -1,20 +1,19 @@
-class Appliance:
-    def __init__(self, name, type, manufacturer, unity_price, quantity, last_day_registry):
-        self.applianceName = name
-        self.applianceType = type
-        self.manufacturer = manufacturer
-        self.unityPrice = unity_price
-        self.quantity = quantity
-        self.lastDayRegistry = last_day_registry
+from datetime import date
 
-    def register_product(self):
-        file = open("stock.dat", "a")
-        file.write(
-            str(self.applianceName) +
-            "," + str(self.applianceType) +
-            "," + str(self.manufacturer) +
-            "," + str(self.unityPrice) +
-            "," + str(self.quantity) +
-            "," + str(self.lastDayRegistry + "\n")
-        )
-        file.close()
+
+class Appliance:
+    def __init__(self, string):
+        str_splited = string.split(",")
+        self.applianceName: str = str_splited[0]
+        self.applianceType: str = str_splited[1]
+        self.manufacturer: str = str_splited[2]
+        self.unityPrice: int = int(str_splited[3])
+        self.quantity: int = int(str_splited[4])
+        self.lastDayRegistry: date = str_splited[5]
+
+    def __str__(self):
+        return str(
+            "[" + self.applianceName + "] " +
+            "[" + self.applianceType + "] " +
+            "[" + self.manufacturer + "] " +
+            "[" + str(self.unityPrice) + "] ")
