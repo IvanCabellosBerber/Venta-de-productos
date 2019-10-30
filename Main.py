@@ -6,7 +6,7 @@ from datetime import date
 Creamos una lista statica, que esta será la que se dedique a guardar y después modificar los productos. Trabajaremos con la lista
 que esta es la que luego refleje los productos en los ficheros, así será mucho más fácil todo.
 """
-products: list = []
+products: list[Appliance] = []
 
 
 class Main:
@@ -75,6 +75,7 @@ def write_appliance(product: Appliance):
                 str(product.quantity) + "," +
                 str(product.lastDayRegistry)
             )
+        file.close()
     except():
         print("SOMETHING WRONG WRITING NEW PRODUCT")
         main.start_app()
@@ -128,7 +129,7 @@ def sell_product():
                     if pds.quantity <= 5:
                         print(pds.applianceName, " has ", pds.quantity, " stock right now, please contact to providers")
                     make_a_bill(pds, unity)
-                except:
+                except():
                     print("ERROR DURING SELLING PRODUCT")
                     main.start_app()
     rewrite_appliances(products)
@@ -223,7 +224,7 @@ def delete_product():
                 if res.__contains__("y"):
                     try:
                         products.pop(pds)
-                    except:
+                    except():
                         print("ERROR DURING SELLING PRODUCT")
                         main.start_app()
     rewrite_appliances(products)
