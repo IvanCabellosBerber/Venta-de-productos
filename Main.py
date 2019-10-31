@@ -149,7 +149,7 @@ def show_products(file: str):
         for pds in products:
             print(pds.__str__())
         p.close()
-    except:
+    except():
         print("ERROR DURING SHOWING PRODUCTS")
         main.start_app()
 
@@ -161,16 +161,16 @@ def add_product():
     try:
         print("REGISTER NEW PRODUCT")
         producto: str = ""
-        producto += str(input("Name: "))
-        producto += str(input("Type: "))
-        producto += str(input("Manufacturer: "))
-        producto += str(input("Stock: "))
-        producto += str(input("Price: "))
+        producto += str(input("Name: ")) + ","
+        producto += str(input("Type: ")) + ","
+        producto += str(input("Manufacturer: ")) + ","
+        producto += str(input("Stock: ")) + ","
+        producto += str(input("Price: ")) + ","
         producto += str(date.today())
         newProduct = Appliance(producto)
         products.append(newProduct)
         rewrite_appliances(products)
-    except:
+    except():
         print("ERROR DURING ADDING PRODUCT")
         main.start_app()
 
